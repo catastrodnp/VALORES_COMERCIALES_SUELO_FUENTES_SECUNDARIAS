@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_24834ff0658d8a006de1ab7bf666811e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; bottom: 50px; left: 50px; width: 250px; height: auto; background-color: white; border:2px solid grey; z-index:9999; font-size:14px;">
+        <h4 style="text-align:center;">Rango de Precios por m²</h4>
+    <i style="background:#440154;width:20px;height:20px;display:inline-block;"></i> $645 - $1,250,516<br><i style="background:#3a528b;width:20px;height:20px;display:inline-block;"></i> $1,250,516 - $2,500,387<br><i style="background:#20908c;width:20px;height:20px;display:inline-block;"></i> $2,500,387 - $3,750,258<br><i style="background:#5ec961;width:20px;height:20px;display:inline-block;"></i> $3,750,258 - $5,000,129<br><i style="background:#fde724;width:20px;height:20px;display:inline-block;"></i> $5,000,129 - $6,250,000<br></div>
+    
+            <div class="folium-map" id="map_24834ff0658d8a006de1ab7bf666811e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_24834ff0658d8a006de1ab7bf666811e = L.map(
+                "map_24834ff0658d8a006de1ab7bf666811e",
+                {
+                    center: [4.455241567005798, -75.6896285280686],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 8,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5295449714ab4e76ed73bbd90c368cd1 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_5295449714ab4e76ed73bbd90c368cd1.addTo(map_24834ff0658d8a006de1ab7bf666811e);
+        
+    
+        function geo_json_6dce6c9f25713da82a56fd839c207c8b_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#fde724", "fillOpacity": 0.6, "weight": 1};
+            }
+        }
+
+        function geo_json_6dce6c9f25713da82a56fd839c207c8b_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_6dce6c9f25713da82a56fd839c207c8b = L.geoJson(null, {
+                onEachFeature: geo_json_6dce6c9f25713da82a56fd839c207c8b_onEachFeature,
+            
+                style: geo_json_6dce6c9f25713da82a56fd839c207c8b_styler,
+        });
+
+        function geo_json_6dce6c9f25713da82a56fd839c207c8b_add (data) {
+            geo_json_6dce6c9f25713da82a56fd839c207c8b
+                .addData(data);
+        }
+            geo_json_6dce6c9f25713da82a56fd839c207c8b_add({"features": [{"geometry": {"coordinates": [[[-75.65520979363211, 4.560733671394447], [-75.64464607453131, 4.547082483605658], [-75.65233984561148, 4.549080715147442], [-75.65536399855394, 4.560504125603214], [-75.65520979363211, 4.560733671394447]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_6dce6c9f25713da82a56fd839c207c8b.bindTooltip(
+                `<div>
+                     Zona 5 - Precio promedio: $6,250,000
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            geo_json_6dce6c9f25713da82a56fd839c207c8b.addTo(map_24834ff0658d8a006de1ab7bf666811e);
+        
+    
+        function geo_json_8cd07c57c2a0c9e30a362eed5bc945e5_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#5ec961", "fillOpacity": 0.6, "weight": 1};
+            }
+        }
+
+        function geo_json_8cd07c57c2a0c9e30a362eed5bc945e5_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_8cd07c57c2a0c9e30a362eed5bc945e5 = L.geoJson(null, {
+                onEachFeature: geo_json_8cd07c57c2a0c9e30a362eed5bc945e5_onEachFeature,
+            
+                style: geo_json_8cd07c57c2a0c9e30a362eed5bc945e5_styler,
+        });
+
+        function geo_json_8cd07c57c2a0c9e30a362eed5bc945e5_add (data) {
+            geo_json_8cd07c57c2a0c9e30a362eed5bc945e5
+                .addData(data);
+        }
+            geo_json_8cd07c57c2a0c9e30a362eed5bc945e5_add({"features": [{"geometry": {"coordinates": [[[-75.65543747882661, 4.556923678094046], [-75.65599918580308, 4.560563061825712], [-75.6559918689451, 4.560730984323528], [-75.65598625672715, 4.560738541407034], [-75.6554501083397, 4.560535564135331], [-75.65543747882661, 4.556923678094046]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_8cd07c57c2a0c9e30a362eed5bc945e5.bindTooltip(
+                `<div>
+                     Zona 4 - Precio promedio: $4,874,409
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            geo_json_8cd07c57c2a0c9e30a362eed5bc945e5.addTo(map_24834ff0658d8a006de1ab7bf666811e);
+        
+    
+        function geo_json_2a4169b861222b77c1a006e77619b111_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#440154", "fillOpacity": 0.6, "weight": 1};
+            }
+        }
+
+        function geo_json_2a4169b861222b77c1a006e77619b111_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_2a4169b861222b77c1a006e77619b111 = L.geoJson(null, {
+                onEachFeature: geo_json_2a4169b861222b77c1a006e77619b111_onEachFeature,
+            
+                style: geo_json_2a4169b861222b77c1a006e77619b111_styler,
+        });
+
+        function geo_json_2a4169b861222b77c1a006e77619b111_add (data) {
+            geo_json_2a4169b861222b77c1a006e77619b111
+                .addData(data);
+        }
+            geo_json_2a4169b861222b77c1a006e77619b111_add({"features": [{"geometry": {"coordinates": [[[-75.65437063693345, 4.549999460068544], [-75.6668741073054, 4.557206304895924], [-75.65599918580308, 4.560563061825712], [-75.65543747882661, 4.556923678094046], [-75.65437063693345, 4.549999460068544]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_2a4169b861222b77c1a006e77619b111.bindTooltip(
+                `<div>
+                     Zona 1 - Precio promedio: $9,694
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            geo_json_2a4169b861222b77c1a006e77619b111.addTo(map_24834ff0658d8a006de1ab7bf666811e);
+        
+    
+        function geo_json_ffffc8ef9a6860cd8dbeafaa30a50593_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#5ec961", "fillOpacity": 0.6, "weight": 1};
+            }
+        }
+
+        function geo_json_ffffc8ef9a6860cd8dbeafaa30a50593_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_ffffc8ef9a6860cd8dbeafaa30a50593 = L.geoJson(null, {
+                onEachFeature: geo_json_ffffc8ef9a6860cd8dbeafaa30a50593_onEachFeature,
+            
+                style: geo_json_ffffc8ef9a6860cd8dbeafaa30a50593_styler,
+        });
+
+        function geo_json_ffffc8ef9a6860cd8dbeafaa30a50593_add (data) {
+            geo_json_ffffc8ef9a6860cd8dbeafaa30a50593
+                .addData(data);
+        }
+            geo_json_ffffc8ef9a6860cd8dbeafaa30a50593_add({"features": [{"geometry": {"coordinates": [[[-75.65536399855394, 4.560504125603214], [-75.65233984561148, 4.549080715147442], [-75.65333369489319, 4.549330403216896], [-75.65437063693345, 4.549999460068544], [-75.65543747882661, 4.556923678094046], [-75.6554501083397, 4.560535564135331], [-75.65536399855394, 4.560504125603214]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_ffffc8ef9a6860cd8dbeafaa30a50593.bindTooltip(
+                `<div>
+                     Zona 4 - Precio promedio: $4,448,819
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            geo_json_ffffc8ef9a6860cd8dbeafaa30a50593.addTo(map_24834ff0658d8a006de1ab7bf666811e);
+        
+    
+        function geo_json_9c70738af2ad60c1d9ce6e1a3a500868_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#3a528b", "fillOpacity": 0.6, "weight": 1};
+            }
+        }
+
+        function geo_json_9c70738af2ad60c1d9ce6e1a3a500868_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_9c70738af2ad60c1d9ce6e1a3a500868 = L.geoJson(null, {
+                onEachFeature: geo_json_9c70738af2ad60c1d9ce6e1a3a500868_onEachFeature,
+            
+                style: geo_json_9c70738af2ad60c1d9ce6e1a3a500868_styler,
+        });
+
+        function geo_json_9c70738af2ad60c1d9ce6e1a3a500868_add (data) {
+            geo_json_9c70738af2ad60c1d9ce6e1a3a500868
+                .addData(data);
+        }
+            geo_json_9c70738af2ad60c1d9ce6e1a3a500868_add({"features": [{"geometry": {"coordinates": [[[-75.65598625672715, 4.560738541407034], [-75.65549277720702, 4.56160509639234], [-75.65520979363211, 4.560733671394447], [-75.65536399855394, 4.560504125603214], [-75.6554501083397, 4.560535564135331], [-75.65598625672715, 4.560738541407034]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_9c70738af2ad60c1d9ce6e1a3a500868.bindTooltip(
+                `<div>
+                     Zona 2 - Precio promedio: $2,012,579
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            geo_json_9c70738af2ad60c1d9ce6e1a3a500868.addTo(map_24834ff0658d8a006de1ab7bf666811e);
+        
+    
+        function geo_json_1fb175a21a7940f1d2d08890daf0db74_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#440154", "fillOpacity": 0.6, "weight": 1};
+            }
+        }
+
+        function geo_json_1fb175a21a7940f1d2d08890daf0db74_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_1fb175a21a7940f1d2d08890daf0db74 = L.geoJson(null, {
+                onEachFeature: geo_json_1fb175a21a7940f1d2d08890daf0db74_onEachFeature,
+            
+                style: geo_json_1fb175a21a7940f1d2d08890daf0db74_styler,
+        });
+
+        function geo_json_1fb175a21a7940f1d2d08890daf0db74_add (data) {
+            geo_json_1fb175a21a7940f1d2d08890daf0db74
+                .addData(data);
+        }
+            geo_json_1fb175a21a7940f1d2d08890daf0db74_add({"features": [{"geometry": {"coordinates": [[[-75.6668741073054, 4.557206304895924], [-75.65437063693345, 4.549999460068544], [-75.65333369489319, 4.549330403216896], [-75.66664247543329, 4.540915895661595], [-75.67453949028086, 4.549192758408861], [-75.68314489776778, 4.566367494133604], [-75.6668741073054, 4.557206304895924]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_1fb175a21a7940f1d2d08890daf0db74.bindTooltip(
+                `<div>
+                     Zona 1 - Precio promedio: $645
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            geo_json_1fb175a21a7940f1d2d08890daf0db74.addTo(map_24834ff0658d8a006de1ab7bf666811e);
+        
+    
+        function geo_json_43a0a7efa94cc159789d8f99a6aacad9_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#440154", "fillOpacity": 0.6, "weight": 1};
+            }
+        }
+
+        function geo_json_43a0a7efa94cc159789d8f99a6aacad9_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_43a0a7efa94cc159789d8f99a6aacad9 = L.geoJson(null, {
+                onEachFeature: geo_json_43a0a7efa94cc159789d8f99a6aacad9_onEachFeature,
+            
+                style: geo_json_43a0a7efa94cc159789d8f99a6aacad9_styler,
+        });
+
+        function geo_json_43a0a7efa94cc159789d8f99a6aacad9_add (data) {
+            geo_json_43a0a7efa94cc159789d8f99a6aacad9
+                .addData(data);
+        }
+            geo_json_43a0a7efa94cc159789d8f99a6aacad9_add({"features": [{"geometry": {"coordinates": [[[-75.68348444743798, 4.566724519271688], [-75.6559918689451, 4.560730984323528], [-75.65599918580308, 4.560563061825712], [-75.6668741073054, 4.557206304895924], [-75.68314489776778, 4.566367494133604], [-75.68348444743798, 4.566724519271688]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_43a0a7efa94cc159789d8f99a6aacad9.bindTooltip(
+                `<div>
+                     Zona 1 - Precio promedio: $693,866
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            geo_json_43a0a7efa94cc159789d8f99a6aacad9.addTo(map_24834ff0658d8a006de1ab7bf666811e);
+        
+    
+        function geo_json_8a96bf57ac0d48fcdc5de5934573f124_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#20908c", "fillOpacity": 0.6, "weight": 1};
+            }
+        }
+
+        function geo_json_8a96bf57ac0d48fcdc5de5934573f124_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_8a96bf57ac0d48fcdc5de5934573f124 = L.geoJson(null, {
+                onEachFeature: geo_json_8a96bf57ac0d48fcdc5de5934573f124_onEachFeature,
+            
+                style: geo_json_8a96bf57ac0d48fcdc5de5934573f124_styler,
+        });
+
+        function geo_json_8a96bf57ac0d48fcdc5de5934573f124_add (data) {
+            geo_json_8a96bf57ac0d48fcdc5de5934573f124
+                .addData(data);
+        }
+            geo_json_8a96bf57ac0d48fcdc5de5934573f124_add({"features": [{"geometry": {"coordinates": [[[-75.69675617916798, 4.580339998034106], [-75.68774565167881, 4.534049691415099], [-75.68805694651736, 4.511980137569745], [-75.69251786457865, 4.515641536837407], [-75.74611435483095, 4.652786636092692], [-75.74594105099987, 4.652852123000059], [-75.74575585999992, 4.652913202000207], [-75.74537910299983, 4.653067713000155], [-75.74516700899994, 4.653134494000085], [-75.74496421099985, 4.6531983490000925], [-75.74484805599985, 4.653208070000119], [-75.74460497099989, 4.653243139000097], [-75.74439519899994, 4.653288206000184], [-75.74427319099988, 4.65332660100006], [-75.74404292899993, 4.653421902000048], [-75.7439943359999, 4.653442010000106], [-75.74397597399991, 4.65344960900012], [-75.74379092599986, 4.65352619500004], [-75.74378162599993, 4.653530042999989], [-75.74343404099994, 4.653665511000042], [-75.74301294299988, 4.653737613000146], [-75.74282433499991, 4.653792223000039], [-75.74258203099993, 4.653888348000066], [-75.74248930599992, 4.65390778200009], [-75.74225633799989, 4.653938902000164], [-75.74213555799986, 4.653973941000174], [-75.7419306139999, 4.654070371000159], [-75.74173554099991, 4.654198329000053], [-75.74172638533109, 4.6542059679472905], [-75.69675617916798, 4.580339998034106]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_8a96bf57ac0d48fcdc5de5934573f124.bindTooltip(
+                `<div>
+                     Zona 3 - Precio promedio: $3,000,000
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            geo_json_8a96bf57ac0d48fcdc5de5934573f124.addTo(map_24834ff0658d8a006de1ab7bf666811e);
+        
+    
+        function geo_json_28d187020bb54d2dfc5f3cbe3e15b048_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#440154", "fillOpacity": 0.6, "weight": 1};
+            }
+        }
+
+        function geo_json_28d187020bb54d2dfc5f3cbe3e15b048_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_28d187020bb54d2dfc5f3cbe3e15b048 = L.geoJson(null, {
+                onEachFeature: geo_json_28d187020bb54d2dfc5f3cbe3e15b048_onEachFeature,
+            
+                style: geo_json_28d187020bb54d2dfc5f3cbe3e15b048_styler,
+        });
+
+        function geo_json_28d187020bb54d2dfc5f3cbe3e15b048_add (data) {
+            geo_json_28d187020bb54d2dfc5f3cbe3e15b048
+                .addData(data);
+        }
+            geo_json_28d187020bb54d2dfc5f3cbe3e15b048_add({"features": [{"geometry": {"coordinates": [[[-75.68774565167881, 4.534049691415099], [-75.69675617916798, 4.580339998034106], [-75.68348444743798, 4.566724519271688], [-75.68314489776778, 4.566367494133604], [-75.67453949028086, 4.549192758408861], [-75.67566081560014, 4.538237578607343], [-75.68774565167881, 4.534049691415099]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_28d187020bb54d2dfc5f3cbe3e15b048.bindTooltip(
+                `<div>
+                     Zona 1 - Precio promedio: $583,658
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            geo_json_28d187020bb54d2dfc5f3cbe3e15b048.addTo(map_24834ff0658d8a006de1ab7bf666811e);
+        
+    
+        function geo_json_d123181bf4383210bb2a88d5a70b4343_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#20908c", "fillOpacity": 0.6, "weight": 1};
+            }
+        }
+
+        function geo_json_d123181bf4383210bb2a88d5a70b4343_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_d123181bf4383210bb2a88d5a70b4343 = L.geoJson(null, {
+                onEachFeature: geo_json_d123181bf4383210bb2a88d5a70b4343_onEachFeature,
+            
+                style: geo_json_d123181bf4383210bb2a88d5a70b4343_styler,
+        });
+
+        function geo_json_d123181bf4383210bb2a88d5a70b4343_add (data) {
+            geo_json_d123181bf4383210bb2a88d5a70b4343
+                .addData(data);
+        }
+            geo_json_d123181bf4383210bb2a88d5a70b4343_add({"features": [{"geometry": {"coordinates": [[[-75.6706980059248, 4.534160743647947], [-75.68420971418402, 4.504246280656449], [-75.68447656495148, 4.504815172368761], [-75.675645239011, 4.538216620053031], [-75.6706980059248, 4.534160743647947]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_d123181bf4383210bb2a88d5a70b4343.bindTooltip(
+                `<div>
+                     Zona 3 - Precio promedio: $2,788,707
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            geo_json_d123181bf4383210bb2a88d5a70b4343.addTo(map_24834ff0658d8a006de1ab7bf666811e);
+        
+    
+        function geo_json_44a3d341ea9d57c06c37765c3b19c8dd_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#3a528b", "fillOpacity": 0.6, "weight": 1};
+            }
+        }
+
+        function geo_json_44a3d341ea9d57c06c37765c3b19c8dd_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_44a3d341ea9d57c06c37765c3b19c8dd = L.geoJson(null, {
+                onEachFeature: geo_json_44a3d341ea9d57c06c37765c3b19c8dd_onEachFeature,
+            
+                style: geo_json_44a3d341ea9d57c06c37765c3b19c8dd_styler,
+        });
+
+        function geo_json_44a3d341ea9d57c06c37765c3b19c8dd_add (data) {
+            geo_json_44a3d341ea9d57c06c37765c3b19c8dd
+                .addData(data);
+        }
+            geo_json_44a3d341ea9d57c06c37765c3b19c8dd_add({"features": [{"geometry": {"coordinates": [[[-75.69251786457865, 4.515641536837407], [-75.68805694651736, 4.511980137569745], [-75.68447656495148, 4.504815172368761], [-75.68420971418402, 4.504246280656449], [-75.68258986539854, 4.498709880564949], [-75.73755705702327, 4.493722244519282], [-75.86801678480357, 4.589341071099337], [-75.86755329999994, 4.589788967000061], [-75.86698019099987, 4.590374070000053], [-75.86664370499989, 4.590688143000193], [-75.86662204599992, 4.5907083580001995], [-75.86658961699987, 4.590725704000192], [-75.86577715399989, 4.591160277000199], [-75.86577500999988, 4.591161424000177], [-75.86487636099986, 4.591541141000107], [-75.86484463799991, 4.591554546000054], [-75.86334189599984, 4.592090219000056], [-75.86239964299995, 4.5924593910002045], [-75.86177935399985, 4.592745391000051], [-75.86138530699986, 4.593163340000103], [-75.86099613699992, 4.59358357800005], [-75.86050238699988, 4.5939938450001705], [-75.86037396799992, 4.594100552000043], [-75.86002454099992, 4.5944687150001755], [-75.85985594399989, 4.594718435000061], [-75.8597553759999, 4.595169007000038], [-75.85976131799987, 4.595283036000183], [-75.85977566199989, 4.5955583980002075], [-75.85986894899992, 4.595890999000119], [-75.86002308699995, 4.596150593000061], [-75.8600771859999, 4.596222725000189], [-75.86014477099991, 4.59631284000011], [-75.86035163299994, 4.596454803000199], [-75.86045523799993, 4.596516198000074], [-75.86057066599994, 4.596584600000199], [-75.8606254849999, 4.596631588000207], [-75.86076941499988, 4.596754957000201], [-75.86099341199986, 4.596948618000113], [-75.86116624999994, 4.597064671000055], [-75.86130383399978, 4.597157053000046], [-75.86148020099989, 4.5973652550000565], [-75.86157730799994, 4.5975977870000975], [-75.8616133999999, 4.597873011000161], [-75.86157631199984, 4.598184801000173], [-75.86149670899994, 4.598410913000066], [-75.86140578899995, 4.59858925400016], [-75.86133163099993, 4.598734714000102], [-75.86120295799986, 4.598989209000138], [-75.86097279299992, 4.599444446000064], [-75.8606753169999, 4.599957331000098], [-75.86059325899987, 4.600336863000052], [-75.86060260399995, 4.600635905000104], [-75.86060864599989, 4.600829232000024], [-75.86070609399991, 4.601254925000205], [-75.86093688999995, 4.6016395910002075], [-75.86100356599991, 4.601721651000048], [-75.8614105829999, 4.602090733000068], [-75.86152296999995, 4.602192645000116], [-75.86193043399993, 4.602300986000159], [-75.86223072999991, 4.602344555000116], [-75.86249523399994, 4.602409596000086], [-75.86279530099989, 4.602589520000038], [-75.86309525799993, 4.602834025999982], [-75.86342368799984, 4.603157525000199], [-75.86369505099992, 4.603394807000143], [-75.86373596599992, 4.603465466000046], [-75.86384479899988, 4.603653415000053], [-75.8639158659999, 4.60391906100017], [-75.86394726399993, 4.60411010200005], [-75.86400080999982, 4.604435905000116], [-75.86404305299993, 4.604830677999985], [-75.86414271099994, 4.605103553000106], [-75.86438542299993, 4.60536949100009], [-75.86473539499991, 4.605642792000083], [-75.86507103999992, 4.605930419000117], [-75.86539943299988, 4.606275445999984], [-75.86561355799995, 4.6065269840001974], [-75.86573494799984, 4.606642012000123], [-75.86583614999995, 4.606693004000078], [-75.86593502599987, 4.6067428240001504], [-75.86612070399991, 4.606901021000169], [-75.86621348299991, 4.607016002000194], [-75.86627964699989, 4.60716885700009], [-75.86638445699987, 4.607410993000087], [-75.86652699399991, 4.607705469000109], [-75.86667677999992, 4.607942548000096], [-75.8667413579999, 4.608012385999984], [-75.86686952199994, 4.6081509870000446], [-75.86691930399991, 4.608316132000084], [-75.86692157099992, 4.608341627000186], [-75.86694737999989, 4.608631938000087], [-75.86698943999994, 4.609134358000119], [-75.86698175099991, 4.609450106000111], [-75.86694514599992, 4.609952391000206], [-75.8669658359999, 4.610404539000115], [-75.8668647149999, 4.610992829000168], [-75.86676409199993, 4.611286889000155], [-75.86659205899991, 4.611516241000118], [-75.86636295699986, 4.611659379000059], [-75.86609077799989, 4.611902912000062], [-75.86597602099994, 4.612096480000048], [-75.86587550699994, 4.612325952000049], [-75.86571755699993, 4.612684500000057], [-75.86558457899986, 4.612833438000109], [-75.86553842399985, 4.612885135000056], [-75.86529491999994, 4.61308565600018], [-75.86520885699986, 4.6132290360001775], [-75.86520148499994, 4.613358199999993], [-75.86523687999994, 4.613573552000048], [-75.86523658699991, 4.613745784000116], [-75.86521784799987, 4.613944237000112], [-75.86520745199994, 4.614054320000037], [-75.86516971899988, 4.614207356999998], [-75.86510663699994, 4.614463199000056], [-75.86496308699992, 4.61476436300012], [-75.8647715599999, 4.614920020999989], [-75.86439484499994, 4.6151328310000395], [-75.86412471399984, 4.6152144610000505], [-75.86373189999995, 4.615271258000007], [-75.86301997999993, 4.615343925000104], [-75.86223443799986, 4.615408259000105], [-75.86178438199994, 4.615448534000109], [-75.86139149999991, 4.615546379000136], [-75.86095535899989, 4.615591312000049], [-75.86042081999989, 4.615678662000164], [-75.86010197199988, 4.615750048000052], [-75.8595642109999, 4.615911850000089], [-75.85932150899981, 4.6160260640001525], [-75.85907404099993, 4.616197385000191], [-75.85868857199995, 4.616506716000117], [-75.85812701899994, 4.617063508000172], [-75.85769395599988, 4.617544159000033], [-75.85736083299992, 4.617948668000054], [-75.85720854599987, 4.618205650000164], [-75.85675169099989, 4.618957562000048], [-75.85613778999993, 4.619966449999993], [-75.85563810299993, 4.620894439000153], [-75.85546201999995, 4.62115618200005], [-75.85505275399993, 4.621608280000146], [-75.8545197549999, 4.622136518000161], [-75.85386778199995, 4.622755183000095], [-75.85365838999991, 4.62295981200009], [-75.85342044499987, 4.623078787000054], [-75.85295406799992, 4.623302454000168], [-75.8525395449999, 4.623479573000168], [-75.85248982438746, 4.623500817033604], [-75.69251786457865, 4.515641536837407]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_44a3d341ea9d57c06c37765c3b19c8dd.bindTooltip(
+                `<div>
+                     Zona 2 - Precio promedio: $1,812,500
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            geo_json_44a3d341ea9d57c06c37765c3b19c8dd.addTo(map_24834ff0658d8a006de1ab7bf666811e);
+        
+    
+        function geo_json_c4f6cc3f6ed2af7574b224f59af24048_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#3a528b", "fillOpacity": 0.6, "weight": 1};
+            }
+        }
+
+        function geo_json_c4f6cc3f6ed2af7574b224f59af24048_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_c4f6cc3f6ed2af7574b224f59af24048 = L.geoJson(null, {
+                onEachFeature: geo_json_c4f6cc3f6ed2af7574b224f59af24048_onEachFeature,
+            
+                style: geo_json_c4f6cc3f6ed2af7574b224f59af24048_styler,
+        });
+
+        function geo_json_c4f6cc3f6ed2af7574b224f59af24048_add (data) {
+            geo_json_c4f6cc3f6ed2af7574b224f59af24048
+                .addData(data);
+        }
+            geo_json_c4f6cc3f6ed2af7574b224f59af24048_add({"features": [{"geometry": {"coordinates": [[[-75.68447656495148, 4.504815172368761], [-75.68805694651736, 4.511980137569745], [-75.68774565167881, 4.534049691415099], [-75.67566081560014, 4.538237578607343], [-75.675645239011, 4.538216620053031], [-75.68447656495148, 4.504815172368761]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_c4f6cc3f6ed2af7574b224f59af24048.bindTooltip(
+                `<div>
+                     Zona 2 - Precio promedio: $1,523,810
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            geo_json_c4f6cc3f6ed2af7574b224f59af24048.addTo(map_24834ff0658d8a006de1ab7bf666811e);
+        
+    
+        function geo_json_c4db3027d7c2587606872b853986b5ff_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#20908c", "fillOpacity": 0.6, "weight": 1};
+            }
+        }
+
+        function geo_json_c4db3027d7c2587606872b853986b5ff_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_c4db3027d7c2587606872b853986b5ff = L.geoJson(null, {
+                onEachFeature: geo_json_c4db3027d7c2587606872b853986b5ff_onEachFeature,
+            
+                style: geo_json_c4db3027d7c2587606872b853986b5ff_styler,
+        });
+
+        function geo_json_c4db3027d7c2587606872b853986b5ff_add (data) {
+            geo_json_c4db3027d7c2587606872b853986b5ff
+                .addData(data);
+        }
+            geo_json_c4db3027d7c2587606872b853986b5ff_add({"features": [{"geometry": {"coordinates": [[[-75.67566081560014, 4.538237578607343], [-75.67453949028086, 4.549192758408861], [-75.66664247543329, 4.540915895661595], [-75.66617052473521, 4.537437681689307], [-75.6706980059248, 4.534160743647947], [-75.675645239011, 4.538216620053031], [-75.67566081560014, 4.538237578607343]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_c4db3027d7c2587606872b853986b5ff.bindTooltip(
+                `<div>
+                     Zona 3 - Precio promedio: $2,986,111
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            geo_json_c4db3027d7c2587606872b853986b5ff.addTo(map_24834ff0658d8a006de1ab7bf666811e);
+        
+</script>
+</html>
