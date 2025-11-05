@@ -216,7 +216,7 @@ with tabs[1]:
     st.sidebar.markdown("### Mapas de valores del suelo")
     
     # Ruta de la carpeta que contiene los archivos HTML para los mapas
-    carpeta_proyectos = 'data\\mapas'
+    carpeta_proyectos = os.path.join('data','mapas')
     html_files_proyectos = [f for f in os.listdir(carpeta_proyectos) if f.endswith('.html')]
     
     # Eliminar la extensión '.html' para mostrar nombres amigables en la lista desplegable
@@ -243,7 +243,7 @@ with tabs[2]:
     
     # Ruta de la carpeta que contiene los archivos HTML para la pestaña 2
     #carpeta_departamentos = r'C:\Users\Sebastian\Documents\ComponenteEconomico\Interpolacion\Voronoi_5_2000'
-    carpeta_departamentos='data\\interpolacion'
+    carpeta_departamentos=os.path.join('data','interpolacion')
     html_files_departamentos = [f for f in os.listdir(carpeta_departamentos) if f.endswith('.html')]
     
     # Eliminar el sufijo '.html' de los nombres para la lista desplegable
@@ -270,3 +270,4 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
