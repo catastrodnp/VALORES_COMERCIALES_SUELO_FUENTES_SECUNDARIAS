@@ -88,7 +88,7 @@ def cargar_modelo(ruta):
     return modelo
 
 # Cargar el modelo utilizando la nueva función con st.cache_resource
-model = cargar_modelo('model\\ValoresSuelo_Xgboost_Col_app_03122024.pkl')
+model = cargar_modelo(os.path.join('model','ValoresSuelo_Xgboost_Col_app_03122024.pkl'))
 
 
 tabs = st.tabs(["1 - Predicción de Precios", "2 - Mapas de Calor y Clusters", "3 -Interpolación - Zonas"])
